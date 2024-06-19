@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "tournaments", schema = "chess_db")
 public class Tournament {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "tournament_id", nullable = false)
     private Integer id;
 

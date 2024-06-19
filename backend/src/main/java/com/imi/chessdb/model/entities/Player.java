@@ -1,14 +1,13 @@
 package com.imi.chessdb.model.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "players", schema = "chess_db")
 public class Player {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "player_id", nullable = false)
     private Integer id;
 

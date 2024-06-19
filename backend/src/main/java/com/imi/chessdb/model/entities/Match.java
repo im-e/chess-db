@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "matches", schema = "chess_db")
 public class Match {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "match_id", nullable = false)
     private Integer id;
 

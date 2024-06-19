@@ -11,13 +11,13 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/players")
-public class PlayerRestController {
+@RequestMapping("/players")
+public class PlayerController {
 
     private final PlayerRepository playerRepository;
 
     @Autowired
-    public PlayerRestController(final PlayerRepository playerRepository) {
+    public PlayerController(final PlayerRepository playerRepository) {
         this.playerRepository = playerRepository;
     }
 
@@ -34,7 +34,7 @@ public class PlayerRestController {
     @PostMapping
     public ResponseEntity createPlayer(@RequestBody Player player) throws URISyntaxException {
         Player savedPlayer = playerRepository.save(player);
-        return ResponseEntity.created(new URI("/api/players/" + savedPlayer.getId())).body(savedPlayer);
+        return ResponseEntity.created(new URI("/players/" + savedPlayer.getId())).body(savedPlayer);
     }
 
     @PutMapping("/{id}")
