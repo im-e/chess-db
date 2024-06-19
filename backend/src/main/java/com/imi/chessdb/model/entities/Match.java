@@ -3,23 +3,27 @@ package com.imi.chessdb.model.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "matches", schema = "chess_db")
+@Table(name = "matches")
 public class Match {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "match_id", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "player1")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "player1_id", nullable = false)
     private Player player1;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "player2")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "player2_id", nullable = false)
     private Player player2;
 
-    @Column(name = "winner")
+    @Column(name = "winner", nullable = false)
     private Integer winner;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tournament_id")
+    private Tournament tournament;
 
     public Integer getId() {
         return id;
@@ -51,6 +55,14 @@ public class Match {
 
     public void setWinner(Integer winner) {
         this.winner = winner;
+    }
+
+    public Tournament getTournament() {
+        return tournament;
+    }
+
+    public void setTournament(Tournament tournament) {
+        this.tournament = tournament;
     }
 
 }

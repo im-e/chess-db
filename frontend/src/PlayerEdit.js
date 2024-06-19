@@ -7,7 +7,6 @@ class PlayerEdit extends Component {
 
     emptyItem = {
         username: '',
-        password: '',
         elo: ''
     };
 
@@ -65,11 +64,6 @@ class PlayerEdit extends Component {
                         <Label for="name">Username</Label>
                         <Input type="text" name="username" id="username" value={item.username || ''}
                                onChange={this.handleChange} autoComplete="username"/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="password">Password</Label>
-                        <Input type="text" name="password" id="password" value={item.password || ''}
-                               onChange={this.handleChange} autoComplete="password"/>
                     </FormGroup>
                     <FormGroup>
                         <Label for="elo">Elo</Label>

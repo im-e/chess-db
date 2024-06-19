@@ -41,7 +41,6 @@ public class PlayerController {
     public ResponseEntity updatePlayer(@PathVariable Integer id, @RequestBody Player player) {
         Player currentPlayer = playerRepository.findById(id).orElseThrow(RuntimeException::new);
         currentPlayer.setUsername(player.getUsername());
-        currentPlayer.setPassword(player.getPassword());
         currentPlayer.setElo(player.getElo());
         currentPlayer = playerRepository.save(player);
 

@@ -14,9 +14,6 @@ public class Player {
     @Column(name = "username", nullable = false, length = 20)
     private String username;
 
-    @Column(name = "password", nullable = false, length = 20)
-    private String password;
-
     @Column(name = "elo")
     private Integer elo;
 
@@ -34,14 +31,6 @@ public class Player {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public Integer getElo() {
