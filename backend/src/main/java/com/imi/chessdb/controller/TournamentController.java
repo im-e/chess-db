@@ -43,7 +43,7 @@ public class TournamentController {
         currentTournament.setTitle(tournament.getTitle());
         currentTournament.setMatches(tournament.getMatches());
         currentTournament.setWinner(tournament.getWinner());
-        currentTournament.setFinalField(tournament.getFinalField());
+        currentTournament.setParticipants(tournament.getParticipants());
         currentTournament.setPrizeMoney(tournament.getPrizeMoney());
 
         currentTournament = tournamentRepository.save(tournament);

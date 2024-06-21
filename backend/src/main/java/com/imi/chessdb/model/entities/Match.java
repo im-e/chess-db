@@ -10,18 +10,18 @@ public class Match {
     @Column(name = "match_id", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "player1_id", nullable = false)
     private Player player1;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "player2_id", nullable = false)
     private Player player2;
 
     @Column(name = "winner", nullable = false)
     private Integer winner;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "tournament_id")
     private Tournament tournament;
 
