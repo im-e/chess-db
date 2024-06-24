@@ -9,7 +9,9 @@ class TournamentEdit extends Component {
         title: '',
         participants: '',
         matches: '',
-        winner: '',
+        winner: {
+            id: ''
+        },
         prizeMoney: ''
     };
 
@@ -33,9 +35,16 @@ class TournamentEdit extends Component {
         const target = event.target;
         const value = target.value;
         const name = target.name;
-        let item = {...this.state.item};
-        item[name] = value;
-        this.setState({item});
+        let item = { ...this.state.item };
+
+        if (name.startsWith('winner.')) {
+            const field = name.split('.')[1];
+            item.winner[field] = value;
+        } else {
+            item[name] = value;
+        }
+
+        this.setState({ item });
     }
 
     async handleSubmit(event) {
@@ -79,8 +88,8 @@ class TournamentEdit extends Component {
                                onChange={this.handleChange} autoComplete="matches"/>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="winner">Winner</Label>
-                        <Input type="text" name="winner" id="winner" value={item.winner || ''}
+                        <Label for="winnerId">Winner ID</Label>
+                        <Input type="text" name="winner.id" id="winnerId" value={item.winner.id || ''}
                                onChange={this.handleChange} autoComplete="winner"/>
                     </FormGroup>
                     <FormGroup>

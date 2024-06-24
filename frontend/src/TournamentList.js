@@ -55,7 +55,7 @@ class TournamentList extends Component {
                 <td>{tournament.title}</td>
                 <td>{tournament.participants}</td>
                 <td>{tournament.matches}</td>
-                <td>{tournament.player.username}</td>
+                <td>{tournament.winner.username}</td>
                 <td>{tournament.prizeMoney}</td>
                 <td>
                     <ButtonGroup>

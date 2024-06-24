@@ -20,7 +20,7 @@ class App extends Component {
             <Route path='/matches' exact={true} component={MatchList}/>
 
             <Route path='/tournaments' exact={true} component={TournamentList}/>
-            <Route path='/matches/:id' exact={true} component={TournamentEdit}/>
+            <Route path='/tournaments/:id' exact={true} component={TournamentEdit}/>
           </Switch>
         </Router>
     )

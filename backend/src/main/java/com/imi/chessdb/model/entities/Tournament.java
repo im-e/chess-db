@@ -19,7 +19,7 @@ public class Tournament {
     @Column(name = "matches", nullable = false)
     private Integer matches;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "winner_id")
     private Player winner;
 
