@@ -18,7 +18,7 @@ export default class AppNavbar extends Component {
     render() {
         return (
             <Navbar color="dark" dark expand="md">
-                <NavbarBrand className="mx-auto" tag={Link} to="/">Chess-DB</NavbarBrand>
+                <NavbarBrand className="mx-auto" tag={Link} to="/">Chess Database</NavbarBrand>
             </Navbar>
         );
     }
